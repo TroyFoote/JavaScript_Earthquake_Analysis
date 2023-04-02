@@ -1,4 +1,4 @@
-const PIXELS_PER_MAG = 5;
+const PIXELS_PER_MAG = 3;
 
 
 // Conditionals for earthquake magnitude by their size and depth of the earthquake by colour
@@ -44,7 +44,7 @@ return info;
  // Creating the map object
 let myMap = L.map("map", {
     center: [0.0, 0.0],
-    zoom: 3
+    zoom: 2
   });
 let majorEarthquakes = new L.LayerGroup();
 
@@ -82,11 +82,32 @@ let majorEarthquakes = new L.LayerGroup();
         // Add a new marker to the cluster group, and bind a popup.
         let style = styleInfo(color, radius);
         majorEarthquakes.addLayer(L.circleMarker([coordinates[1], coordinates[0]], style)
-          .bindPopup(properties.place));
+          .bindPopup("<h3>" + properties.title + "<h3>" + coordinates[2] + ' depth'));
       }
   // Add our marker cluster layer to the map.
   myMap.addLayer(majorEarthquakes);
     }
-  
+
+    // let legendColors = [depthColor.depth];
+    // let legendLabels = [depthColor.color];
+    
+    // let legend = L.control({ position: 'bottomright' });
+
+    // legend.onAdd = function (myMap) {
+    //   let div = L.DomUtil.create('div', 'legend');
+    //   return div;
+    // };
+    
+    // legend.addTo(myMap);
+        
+    // for (var i = 0; i < legendColors.length; i++) {
+    //   let color = legendColors[i];
+    //   let label = legendLabels[i];
+    
+    //   let html = '<div><i style="background:' + color + '"></i>' + label + '</div>';
+    //   $(legend.getContainer()).append(html);
+    // }
+    
+
 });
 

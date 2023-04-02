@@ -7,4 +7,26 @@ body {
 body,
 html {
   height: 100%;
+
 }
+
+/* .legend {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.legend div {
+  margin-bottom: 5px;
+}
+
+.legend i {
+  width: 20px;
+  height: 10px;
+  display: inline-block;
+  margin-right: 5px;
+} */
