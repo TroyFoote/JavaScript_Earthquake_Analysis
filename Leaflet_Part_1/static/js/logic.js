@@ -1,4 +1,4 @@
-const PIXELS_PER_MAG = 3;
+const PIXELS_PER_MAG = 50000;
 
 
 // Conditionals for earthquake magnitude by their size and depth of the earthquake by colour
@@ -61,7 +61,7 @@ let majorEarthquakes = new L.LayerGroup();
   // Get the data with d3.
   d3.json(geoData).then(function(data) {
 
-    L.geoJSON(data).addTo(myMap);
+    // L.geoJSON(data).addTo(myMap);
    console.log(data)
 
     // Loop through the data.
@@ -81,41 +81,13 @@ let majorEarthquakes = new L.LayerGroup();
 
         // Add a new marker to the cluster group, and bind a popup.
         let style = styleInfo(color, radius);
-        majorEarthquakes.addLayer(L.circleMarker([coordinates[1], coordinates[0]], style)
+        majorEarthquakes.addLayer(L.circle([coordinates[1], coordinates[0]], style)
           .bindPopup("<h3>" + properties.title + "<h3>" + coordinates[2] + ' depth'));
       }
   // Add our marker cluster layer to the map.
   myMap.addLayer(majorEarthquakes);
     }
 
-  // // Set up the legend.
-  // let legend = L.control({ position: "bottomright" });
-  // legend.onAdd = function() {
-  //   let div = L.DomUtil.create("div", "info legend");
-  //   let limits = depth;
-  //   let colors = color;
-  //   let labels = [];
-
-  //   // Add the minimum and maximum.
-  //   let legendInfo = "<h1>Significant Earthquakes in past 30 days</h1>" +
-  //     "<div class=\"labels\">" +
-  //       "<div class=\"min\">" + limits[0] + "</div>" +
-  //       "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +
-  //     "</div>";
-
-  //   div.innerHTML = legendInfo;
-
-  //   limits.forEach(function(limit, index) {
-  //     labels.push("<li style=\"background-color: " + colors[index] + "\"></li>");
-  //   });
-
-  //   div.innerHTML += "<ul>" + labels.join("") + "</ul>";
-  //   return div;
-  // };
-
-  // // Adding the legend to the map
-  // legend.addTo(myMap);
-
-
+ 
 });
 
