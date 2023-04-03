@@ -88,26 +88,34 @@ let majorEarthquakes = new L.LayerGroup();
   myMap.addLayer(majorEarthquakes);
     }
 
-    // let legendColors = [depthColor.depth];
-    // let legendLabels = [depthColor.color];
-    
-    // let legend = L.control({ position: 'bottomright' });
+  // // Set up the legend.
+  // let legend = L.control({ position: "bottomright" });
+  // legend.onAdd = function() {
+  //   let div = L.DomUtil.create("div", "info legend");
+  //   let limits = depth;
+  //   let colors = color;
+  //   let labels = [];
 
-    // legend.onAdd = function (myMap) {
-    //   let div = L.DomUtil.create('div', 'legend');
-    //   return div;
-    // };
-    
-    // legend.addTo(myMap);
-        
-    // for (var i = 0; i < legendColors.length; i++) {
-    //   let color = legendColors[i];
-    //   let label = legendLabels[i];
-    
-    //   let html = '<div><i style="background:' + color + '"></i>' + label + '</div>';
-    //   $(legend.getContainer()).append(html);
-    // }
-    
+  //   // Add the minimum and maximum.
+  //   let legendInfo = "<h1>Significant Earthquakes in past 30 days</h1>" +
+  //     "<div class=\"labels\">" +
+  //       "<div class=\"min\">" + limits[0] + "</div>" +
+  //       "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +
+  //     "</div>";
+
+  //   div.innerHTML = legendInfo;
+
+  //   limits.forEach(function(limit, index) {
+  //     labels.push("<li style=\"background-color: " + colors[index] + "\"></li>");
+  //   });
+
+  //   div.innerHTML += "<ul>" + labels.join("") + "</ul>";
+  //   return div;
+  // };
+
+  // // Adding the legend to the map
+  // legend.addTo(myMap);
+
 
 });
 
