@@ -1,16 +1,9 @@
-# Leaflet_Challenge
+# JavaScript Earthquake Analysis
+Module 15
 
 ## Project Description
 
 Develop a way to visualise USGS data that will allow them to better educate the public and other government organisations (and hopefully secure more funding) on issues facing our planet.
-
-### Requirements
-
-* JavaScript
-* HTML
-* Json
-* Leaflet
-* D3
 
 ### Instructions
 
@@ -28,8 +21,13 @@ Develop a way to visualise USGS data that will allow them to better educate the 
 
 * Create a legend that will provide context for your map data.
 
+### Dependencies
 
-
+* JavaScript
+* HTML
+* Json
+* Leaflet
+* D3
 
 ### References
 Dataset created by the United States Geological SurveyLinks to an external site..
